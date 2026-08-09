@@ -1,0 +1,16 @@
+project_id = "voltloop"
+
+[api]
+enabled = true
+
+[functions.verify-relay]
+verify_jwt = true
+
+[functions.redeem-tokens]
+verify_jwt = true
+
+[functions.place-order]
+verify_jwt = true
+
+[functions.ocm-proxy]
+verify_jwt = false

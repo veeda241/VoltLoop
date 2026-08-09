@@ -1,0 +1,11 @@
+#pragma once
+#include <stdint.h>
+
+/* Copy this file to hmac_key.h (gitignored) and replace with a production secret.
+ * Must match VOLTLOOP_HMAC_KEY on the server / .env */
+
+static const uint8_t VL_HMAC_KEY[] = {
+    'v','o','l','t','l','o','o','p','-','d','e','m','o','-',
+    'h','m','a','c','-','k','e','y','-','2','0','2','6'
+};
+#define VL_HMAC_KEY_LEN (sizeof(VL_HMAC_KEY))

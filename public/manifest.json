@@ -1,0 +1,17 @@
+{
+  "name": "VoltLoop",
+  "short_name": "VoltLoop",
+  "description": "VANET-inspired EV charging rewards and hyper-local merchant offers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050a14",
+  "theme_color": "#050a14",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

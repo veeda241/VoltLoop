@@ -1,0 +1,12 @@
+{
+  "name": "VoltLoop",
+  "short_name": "VoltLoop",
+  "description": "The charging cable is collateral.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050a14",
+  "theme_color": "#050a14",
+  "icons": [
+    { "src": "/bolt.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

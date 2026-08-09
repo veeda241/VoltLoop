@@ -1,0 +1,35 @@
+# dependencies
+/node_modules
+
+# vite / next
+/dist
+/.next/
+/out/
+
+# env & secrets
+.env
+.env*.local
+!.env.example
+firmware/include/hmac_key.h
+.data/
+
+# debug
+npm-debug.log*
+
+# firmware
+firmware/.pio/
+*.bin
+*.elf
+
+# os
+.DS_Store
+Thumbs.db
+
+.tmp-archive/
+.tmp-voltloop-zip/
+archive.zip
+voltloop.zip
+voltloop_vanet_files.zip
+
+# typescript
+*.tsbuildinfo
