@@ -4,27 +4,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: "#050a14",
-        "bg-elev": "#0c1220",
-        "bg-card": "#111827",
-        line: "#1e293b",
-        text: "#e8eef8",
-        muted: "#8b9bb4",
+        bg: "#120c08",
+        "bg-elev": "#1c140e",
+        "bg-card": "#241a12",
+        line: "#3d2e22",
+        text: "#f4efe6",
+        muted: "#b8a894",
         volt: "#c8f542",
         "volt-ink": "#0a1208",
-        cyan: "#7dd3fc",
-        danger: "#ff6b6b",
-        warn: "#ffc14a",
+        cyan: "#3ecfb2",
+        gold: "#e8b84a",
+        terracotta: "#c45c26",
+        danger: "#e85d4a",
+        warn: "#e8a017",
       },
       fontFamily: {
-        display: ["Geist", "Inter", "system-ui", "sans-serif"],
+        display: ["Fraunces", "Georgia", "serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["Geist Mono", "ui-monospace", "monospace"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },
       boxShadow: {
         glow: "0 0 40px -10px rgba(200,245,66,0.40)",
-        "glow-cyan": "0 0 40px -10px rgba(125,211,252,0.35)",
-        card: "0 1px 0 0 rgba(232,245,238,0.03) inset",
+        "glow-cyan": "0 0 40px -10px rgba(62,207,178,0.35)",
+        "glow-gold": "0 0 40px -10px rgba(232,184,74,0.40)",
+        card: "0 1px 0 0 rgba(244,239,230,0.04) inset",
       },
       keyframes: {
         pulseline: {

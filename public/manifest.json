@@ -1,6 +1,6 @@
 {
-  "name": "VoltLoop",
-  "short_name": "VoltLoop",
+  "name": "Thulir",
+  "short_name": "Thulir",
   "description": "VANET-inspired EV charging rewards and hyper-local merchant offers",
   "start_url": "/",
   "display": "standalone",

@@ -8,12 +8,12 @@ const sans = Geist({ subsets: ["latin"], variable: "--font-sans" });
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "VoltLoop — Charge time, spent well",
+  title: "Thulir — Charge time, spent well",
   description:
-    "VoltLoop turns EV charge time into nearby offers, honest bay status, and rewards you can spend before you unplug.",
+    "Thulir turns EV charge time into nearby offers, honest bay status, and rewards you can spend before you unplug.",
   manifest: "/manifest.json",
   icons: { icon: "/icon.svg" },
-  appleWebApp: { capable: true, title: "VoltLoop", statusBarStyle: "black-translucent" },
+  appleWebApp: { capable: true, title: "Thulir", statusBarStyle: "black-translucent" },
 };
 
 export const viewport: Viewport = {

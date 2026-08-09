@@ -400,7 +400,7 @@ export default function GoogleStationMap({
                 ) : selected.source === "india-csv" ? (
                   <p className="mt-1 text-xs font-medium text-[#1a73e8]">India catalog · archive.zip</p>
                 ) : selected.source === "voltloop" ? (
-                  <p className="mt-1 text-xs font-medium text-[#1a73e8]">VoltLoop hub</p>
+                  <p className="mt-1 text-xs font-medium text-[#1a73e8]">Thulir hub</p>
                 ) : null}
               </div>
               <span className="shrink-0 rounded-full bg-[#f1f3f4] px-2 py-0.5 text-xs font-medium">

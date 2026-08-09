@@ -47,7 +47,7 @@ export default function MerchantPage() {
       <div>
         <h1 className="text-2xl font-semibold">Orders</h1>
         <p className="text-sm text-[var(--muted)]">
-          Orders from drivers charging nearby. VoltLoop’s platform fee is {Math.round(MERCHANT_COMMISSION_RATE * 100)}%.
+          Orders from drivers charging nearby. Thulir’s platform fee is {Math.round(MERCHANT_COMMISSION_RATE * 100)}%.
         </p>
       </div>
 

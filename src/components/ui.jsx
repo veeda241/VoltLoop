@@ -5,14 +5,14 @@ export function Logo({ size = 40 }) {
   return (
     <div className="flex items-center gap-3 select-none">
       <div
-        className="grid place-items-center rounded-xl bg-volt text-volt-ink font-black shadow-glow"
+        className="grid place-items-center rounded-xl bg-volt text-volt-ink font-black shadow-glow ring-2 ring-gold/80"
         style={{ width: size, height: size }}
       >
         <svg width={size * 0.55} height={size * 0.55} viewBox="0 0 24 24" fill="currentColor">
           <path d="M13 2 L4 14 H10 L9 22 L20 9 H13 L13 2 Z" />
         </svg>
       </div>
-      <span className="font-display font-extrabold tracking-tight text-2xl md:text-3xl text-text">VoltLoop</span>
+      <span className="font-display font-extrabold tracking-tight text-2xl md:text-3xl text-text">Thulir</span>
     </div>
   );
 }
@@ -52,6 +52,7 @@ export function Pill({ tone = "muted", children, className = "" }) {
     muted: "bg-line/50 text-muted",
     volt: "bg-volt/15 text-volt border border-volt/30",
     cyan: "bg-cyan/15 text-cyan border border-cyan/30",
+    gold: "bg-gold/15 text-gold border border-gold/30",
     warn: "bg-warn/15 text-warn border border-warn/30",
     danger: "bg-danger/15 text-danger border border-danger/30",
   };
@@ -119,7 +120,7 @@ export function StatBlock({ label, value, tone = "text" }) {
 
 export function SectionEyebrow({ children, className = "" }) {
   return (
-    <p className={`text-xs font-mono-tight uppercase tracking-[0.2em] text-cyan mb-3 ${className}`}>
+    <p className={`text-xs font-mono-tight uppercase tracking-[0.2em] text-gold mb-3 ${className}`}>
       {children}
     </p>
   );

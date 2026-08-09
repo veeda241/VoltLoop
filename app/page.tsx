@@ -16,7 +16,7 @@ export default function HomePage() {
             </span>
           </h1>
           <p className="mt-6 max-w-2xl text-base md:text-lg text-[var(--muted)]">
-            Those 30–45 minutes at the charger are guaranteed local time. VoltLoop turns them into nearby
+            Those 30–45 minutes at the charger are guaranteed local time. Thulir turns them into nearby
             offers, honest bay status, and rewards you actually spend before you unplug.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -53,7 +53,7 @@ export default function HomePage() {
       <section className="space-y-10 md:space-y-14">
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[var(--cyan)] md:text-base">
-            Why VoltLoop
+            Why Thulir
           </p>
           <h2 className="max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             Charge time, spent well.

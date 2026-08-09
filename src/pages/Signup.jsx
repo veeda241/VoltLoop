@@ -34,7 +34,7 @@ export default function Signup() {
     <PageIn className="max-w-md mx-auto py-12">
       <Card glow="cyan">
         <h1 className="font-display text-2xl font-bold mb-1">Create your account</h1>
-        <p className="text-sm text-muted mb-6">Join VoltLoop to find chargers and earn rewards while you wait.</p>
+        <p className="text-sm text-muted mb-6">Join Thulir to find chargers and earn rewards while you wait.</p>
         <form onSubmit={submit} className="space-y-4">
           <div>
             <label className="text-xs text-muted mb-1.5 block">Email</label>
@@ -104,14 +104,14 @@ export default function Signup() {
           <label className="flex gap-3 items-start text-xs text-muted cursor-pointer">
             <input type="checkbox" checked={dpdp} onChange={(e) => setDpdp(e.target.checked)} className="mt-0.5 accent-[#c8f542]" />
             <span>
-              I agree that VoltLoop may use my location and charge time to show nearby offers and bay status.
+              I agree that Thulir may use my location and charge time to show nearby offers and bay status.
               This data is never sold. I can view or delete it anytime.
             </span>
           </label>
           <label className="flex gap-3 items-start text-xs text-muted cursor-pointer">
             <input type="checkbox" checked={eula} onChange={(e) => setEula(e.target.checked)} className="mt-0.5 accent-[#c8f542]" />
             <span>
-              I accept the <NavLink to="/legal" className="text-text underline underline-offset-2">VoltLoop terms</NavLink>:
+              I accept the <NavLink to="/legal" className="text-text underline underline-offset-2">Thulir terms</NavLink>:
               VL is in-app credit only — not cash, not transferable, and not for resale.
             </span>
           </label>

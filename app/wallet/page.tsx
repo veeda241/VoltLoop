@@ -53,7 +53,7 @@ function WalletInner() {
         <p className="text-xs uppercase tracking-wider text-[var(--muted)]">Token balance</p>
         <p className="mt-1 text-4xl font-semibold text-[var(--volt)]">{balance.toFixed(0)} VL</p>
         <p className="mt-2 text-sm text-[var(--muted)]">
-          VL is in-app credit. 1 VL = ₹1 off at VoltLoop partners. It can’t be withdrawn as cash.
+          VL is in-app credit. 1 VL = ₹1 off at Thulir partners. It can’t be withdrawn as cash.
         </p>
       </div>
 

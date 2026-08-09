@@ -170,7 +170,7 @@ export default function Offers() {
           <div className={`w-2.5 h-2.5 rounded-full ${bleStatus === "connected" ? "bg-volt animate-pulse" : "bg-muted"}`} />
           <div>
             <p className="text-sm font-semibold">{bleStatus === "connected" ? "Vehicle connected" : "Listening nearby"}</p>
-            <p className="text-xs text-muted">Your phone stays private. The car talks to VoltLoop — not to shops.</p>
+            <p className="text-xs text-muted">Your phone stays private. The car talks to Thulir — not to shops.</p>
           </div>
         </div>
         <div className="flex gap-2">

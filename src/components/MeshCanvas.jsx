@@ -2,11 +2,11 @@ import React, { forwardRef, useEffect, useImperativeHandle, useRef } from "react
 
 const COLORS = {
   volt: "#c8f542",
-  cyan: "#7dd3fc",
-  muted: "#475569",
-  danger: "#ff6b6b",
-  line: "#1e293b",
-  text: "#e8eef8",
+  cyan: "#3ecfb2",
+  muted: "#5a4433",
+  danger: "#e85d4a",
+  line: "#3d2e22",
+  text: "#f4efe6",
 };
 
 function rand(min, max) {

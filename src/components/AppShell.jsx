@@ -57,9 +57,9 @@ export default function AppShell({ children }) {
     <div className="min-h-screen bg-bg flex flex-col">
       <div className="pointer-events-none fixed inset-0 z-0" aria-hidden>
         <GradientWaves
-          horizonColor="#0B1A3A"
-          waveColor="#4D8DFF"
-          crestColor="#E8F4FF"
+          horizonColor="#1A0C08"
+          waveColor="#C45C26"
+          crestColor="#F0D9A0"
           speed={0.4}
           amplitude={2.8}
           waveScale={0.65}
@@ -71,14 +71,14 @@ export default function AppShell({ children }) {
           height={5.5}
           fogDepth={18}
           detail="medium"
-          brightness={1.2}
+          brightness={1.15}
           opacity={1}
           mouseInteraction={true}
           parallaxStrength={0.5}
           grain={true}
-          grainIntensity={0.04}
+          grainIntensity={0.05}
         />
-        <div className="absolute inset-0 bg-bg/15" />
+        <div className="absolute inset-0 bg-bg/20" />
       </div>
 
       <header className="sticky top-0 z-50">
@@ -100,14 +100,14 @@ export default function AppShell({ children }) {
               <PillNav
                 hideLogo
                 logo="/logo-mark.svg"
-                logoAlt="VoltLoop"
+                logoAlt="Thulir"
                 items={items}
                 activeHref={loc.pathname}
                 ease="power2.easeOut"
-                baseColor="#4A8BFF"
-                pillColor="#FFFFFF"
-                hoveredPillTextColor="#FFFFFF"
-                pillTextColor="#0B1A3A"
+                baseColor="#E8B84A"
+                pillColor="#FFF8EE"
+                hoveredPillTextColor="#FFF8EE"
+                pillTextColor="#1A0C08"
                 initialLoadAnimation
               />
             </div>

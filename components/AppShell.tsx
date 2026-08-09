@@ -51,7 +51,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <span className="grid h-10 w-10 md:h-11 md:w-11 place-items-center rounded-xl bg-[var(--volt)] text-[#0a1208]">
               <Bolt size={22} />
             </span>
-            VoltLoop
+            Thulir
           </Link>
           <nav className="hidden items-center gap-1 md:flex">
             {DRIVER_LINKS.map((l) => (

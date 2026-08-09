@@ -15,22 +15,33 @@ html, body, #root {
 }
 
 body {
-  background: #050a14;
-  color: #e8eef8;
+  background: #120c08;
+  color: #f4efe6;
   font-family: "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("/kolam.svg");
+  background-size: 160px 160px;
+}
+
 ::selection {
-  background: #c8f542;
-  color: #0a1208;
+  background: #e8b84a;
+  color: #120c08;
 }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #0c1220; }
-::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: #334155; }
+::-webkit-scrollbar-track { background: #1c140e; }
+::-webkit-scrollbar-thumb { background: #3d2e22; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #5a4433; }
 
 :focus-visible {
   outline: 2px solid #c8f542;
@@ -42,14 +53,14 @@ body {
 
 .bg-mesh-glow {
   background:
-    radial-gradient(600px circle at 15% 0%, rgba(77,141,255,0.12), transparent 60%),
-    radial-gradient(500px circle at 90% 20%, rgba(125,211,252,0.08), transparent 55%),
-    #050a14;
+    radial-gradient(600px circle at 15% 0%, rgba(196,92,38,0.18), transparent 60%),
+    radial-gradient(500px circle at 90% 20%, rgba(232,184,74,0.12), transparent 55%),
+    #120c08;
 }
 
 .card-elev {
-  background: rgba(17, 24, 39, 0.92);
-  border: 1px solid #1e293b;
+  background: rgba(36, 26, 18, 0.90);
+  border: 1px solid rgba(232, 184, 74, 0.22);
   backdrop-filter: blur(10px);
 }
 
@@ -57,29 +68,29 @@ body {
 
 /* Leaflet dark theme (non-Google maps) */
 .leaflet-container:not(.google-map-tiles) {
-  background: #0c1220 !important;
+  background: #1c140e !important;
   font-family: "Inter", system-ui, sans-serif !important;
 }
 .leaflet-container:not(.google-map-tiles) .leaflet-tile {
   filter: brightness(0.55) invert(1) contrast(0.9) hue-rotate(180deg) saturate(0.5) brightness(0.65);
 }
 .leaflet-container:not(.google-map-tiles) .leaflet-popup-content-wrapper {
-  background: #111827;
-  color: #e8eef8;
-  border: 1px solid #1e293b;
+  background: #241a12;
+  color: #f4efe6;
+  border: 1px solid rgba(232, 184, 74, 0.22);
   border-radius: 14px;
 }
-.leaflet-container:not(.google-map-tiles) .leaflet-popup-tip { background: #111827; }
+.leaflet-container:not(.google-map-tiles) .leaflet-popup-tip { background: #241a12; }
 .leaflet-container:not(.google-map-tiles) .leaflet-control-zoom a {
-  background: #111827 !important;
-  color: #e8eef8 !important;
-  border-color: #1e293b !important;
+  background: #241a12 !important;
+  color: #f4efe6 !important;
+  border-color: #3d2e22 !important;
 }
 .leaflet-container:not(.google-map-tiles) .leaflet-control-attribution {
-  background: rgba(5,10,20,0.7) !important;
-  color: #8b9bb4 !important;
+  background: rgba(18,12,8,0.7) !important;
+  color: #b8a894 !important;
 }
-.leaflet-container:not(.google-map-tiles) .leaflet-control-attribution a { color: #7dd3fc !important; }
+.leaflet-container:not(.google-map-tiles) .leaflet-control-attribution a { color: #3ecfb2 !important; }
 
 /* Google Maps interface */
 .gmaps-shell .leaflet-container.google-map-tiles {

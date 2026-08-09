@@ -12,7 +12,7 @@ const PRIVACY = [
   "We do not sell your data to third parties.",
   "You can view or delete your data at any time.",
   "Vehicle identifiers rotate and are not tied to your name or phone number.",
-  "VoltLoop follows India’s Digital Personal Data Protection Act, 2023.",
+  "Thulir follows India’s Digital Personal Data Protection Act, 2023.",
 ];
 
 export default function Legal() {
@@ -21,7 +21,7 @@ export default function Legal() {
       <div className="pt-6 pb-4">
         <SectionEyebrow>Legal</SectionEyebrow>
         <h1 className="font-display text-2xl md:text-3xl font-bold">Privacy &amp; terms</h1>
-        <p className="text-sm text-muted mt-2">How VoltLoop rewards work, and how we handle your data.</p>
+        <p className="text-sm text-muted mt-2">How Thulir rewards work, and how we handle your data.</p>
       </div>
 
       <Card className="mb-5">

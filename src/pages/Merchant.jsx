@@ -35,7 +35,7 @@ export default function Merchant() {
         <h1 className="font-display text-2xl md:text-3xl font-bold mb-1">
           {state.merchants.find((m) => m.id === user.merchantId)?.name || "All shops"}
         </h1>
-        <p className="text-sm text-muted">Orders from drivers charging nearby. VoltLoop’s platform fee is 15%.</p>
+        <p className="text-sm text-muted">Orders from drivers charging nearby. Thulir’s platform fee is 15%.</p>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">

@@ -3,31 +3,29 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button, Card, Pill, PageIn, SectionEyebrow } from "../components/ui";
 import MeshCanvas from "../components/MeshCanvas";
+import KolamDivider from "../components/KolamDivider";
 
 const FEATURES = [
   {
     title: "Offers that find you",
     body: "Nearby shops reach drivers through vehicles around the hub. No phone numbers, no SMS, no spam.",
     tone: "volt",
-    image:
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
-    alt: "Café counter with coffee ready for pickup",
+    image: "/tn/filter-coffee.jpg",
+    alt: "Tamil filter coffee in a traditional davara tumbler",
   },
   {
     title: "Rewards you can spend",
     body: "Pass an offer along and you earn VL. Use it on charging or at partner stores — not as cash.",
     tone: "cyan",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80",
-    alt: "Paying at a local shop with a phone",
+    image: "/tn/kolam.jpg",
+    alt: "Traditional Tamil kolam at a doorway",
   },
   {
     title: "Bays you can trust",
     body: "Drivers share when they’ll unplug. Others see when a bay is likely free — before they detour.",
     tone: "warn",
-    image:
-      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=80",
-    alt: "Electric car charging at a public hub",
+    image: "/tn/tiruchendur-coast.jpg",
+    alt: "Sunrise on the Tiruchendur coast in Thoothukudi district",
   },
 ];
 
@@ -36,43 +34,43 @@ const STEPS = [
     "Find a charger",
     "/map",
     "See nearby hubs, distance, and how soon a bay opens.",
-    "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=900&q=80",
-    "Map view for nearby places",
+    "/tn/kapaleeshwarar.jpg",
+    "Kapaleeshwarar Temple gopuram in Chennai",
   ],
   [
     "Start charging",
     "/session",
     "Plug in and share how long you’ll stay.",
-    "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=80",
-    "EV plugged into a charger",
+    "/tn/thanjavur.jpg",
+    "Brihadisvara Temple in Thanjavur",
   ],
   [
     "Catch nearby offers",
     "/offers",
     "Cafés and shops around the hub reach you while you wait.",
-    "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80",
-    "Restaurant table near a charging stop",
+    "/tn/dosa.jpg",
+    "Masala dosa with chutney and sambar",
   ],
   [
     "Pass it on, earn VL",
     "/offers",
     "Share an offer with the next vehicle and earn rewards.",
-    "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=900&q=80",
-    "Cars moving along a city road",
+    "/tn/pamban.jpg",
+    "Train crossing the Pamban Bridge toward Rameswaram",
   ],
   [
     "Order while you wait",
     "/wallet",
     "Food, coffee, or a quick service — ready before you unplug.",
-    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
-    "Food ready for pickup",
+    "/tn/idli.jpg",
+    "Idli and sambar ready for pickup",
   ],
   [
     "Run the station",
     "/cpo",
     "Occupancy, offer reach, and spend attributed to each hub.",
-    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-    "Station operations dashboard",
+    "/tn/tiruchendur.jpg",
+    "Tiruchendur Murugan Temple in Thoothukudi district",
   ],
 ];
 
@@ -87,7 +85,7 @@ export default function Landing() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Pill tone="cyan">Now live in Thoothukudi</Pill>
+              <Pill tone="gold">Now live in Thoothukudi</Pill>
             </motion.div>
 
             <motion.h1
@@ -105,8 +103,9 @@ export default function Landing() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-muted mt-6 text-base md:text-xl max-w-2xl leading-relaxed"
             >
-              Those 30–45 minutes at the charger are guaranteed local time. VoltLoop turns them into
-              nearby offers, honest bay status, and rewards you actually spend before you unplug.
+              Those 30–45 minutes at the charger are guaranteed local time along the Tuticorin coast.
+              Thulir turns them into nearby offers, honest bay status, and rewards you actually spend
+              before you unplug.
             </motion.p>
 
             <motion.div
@@ -139,15 +138,17 @@ export default function Landing() {
               </div>
               <MeshCanvas density={12} height={420} />
               <div className="px-5 pb-5 pt-1 text-xs text-muted">
-                Blue lines are offers reaching the next vehicle. The brighter dot is you.
+                Teal lines are offers reaching the next vehicle. The brighter dot is you.
               </div>
             </Card>
           </motion.div>
         </div>
       </section>
 
+      <KolamDivider className="py-4 md:py-6" />
+
       <section className="py-16 md:py-28 lg:py-32">
-        <SectionEyebrow className="text-sm md:text-base tracking-[0.22em] mb-4">Why VoltLoop</SectionEyebrow>
+        <SectionEyebrow className="text-sm md:text-base tracking-[0.22em] mb-4">Why Thulir</SectionEyebrow>
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-2 mb-10 md:mb-14 max-w-4xl leading-[1.05]">
           Charge time, spent well.
         </h2>
@@ -182,6 +183,8 @@ export default function Landing() {
           ))}
         </div>
       </section>
+
+      <KolamDivider className="py-4 md:py-6" />
 
       <section className="py-16 md:py-28 lg:py-32">
         <SectionEyebrow className="text-sm md:text-base tracking-[0.22em] mb-4">How it works</SectionEyebrow>
@@ -219,7 +222,8 @@ export default function Landing() {
 
       <footer className="py-12 border-t border-line/70 mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <p className="text-sm text-muted max-w-xl leading-relaxed">
-          VoltLoop is in-app credit for charging and partner stores. VL is not cash, cannot be withdrawn, and is not transferable.
+          Made for the Tamil Nadu EV corridor, starting in Thoothukudi. VL is in-app credit for charging
+          and partner stores — not cash, not withdrawable, not transferable.
         </p>
         <div className="flex gap-4 text-sm text-muted">
           <NavLink to="/legal" className="hover:text-text">Privacy &amp; terms</NavLink>

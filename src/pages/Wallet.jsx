@@ -78,7 +78,7 @@ export default function Wallet() {
           {user.vlBalance} VL
         </motion.p>
         <p className="text-xs text-muted mt-3 max-w-sm mx-auto">
-          VL is in-app credit. 1 VL = ₹1 off at VoltLoop partners. It can’t be withdrawn as cash.
+          VL is in-app credit. 1 VL = ₹1 off at Thulir partners. It can’t be withdrawn as cash.
         </p>
       </Card>
 

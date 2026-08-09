@@ -45,7 +45,7 @@ export default function SignupPage() {
     <div className="mx-auto max-w-md">
       <h1 className="text-2xl font-semibold">Create your account</h1>
       <p className="mt-1 text-sm text-[var(--muted)]">
-        Join VoltLoop to find chargers and earn rewards while you wait.
+        Join Thulir to find chargers and earn rewards while you wait.
       </p>
       <form onSubmit={(e) => void onSubmit(e)} className="mt-6 space-y-4">
         <Field label="Email" value={email} onChange={setEmail} type="email" />
@@ -54,14 +54,14 @@ export default function SignupPage() {
         <Field label="Battery capacity (kWh)" value={kwh} onChange={setKwh} type="number" />
         <label className="flex items-start gap-2 text-sm text-[var(--muted)]">
           <input type="checkbox" checked={dpdp} onChange={(e) => setDpdp(e.target.checked)} className="mt-1" />
-          I agree that VoltLoop may use my location and charge time to show nearby offers and bay status.
+          I agree that Thulir may use my location and charge time to show nearby offers and bay status.
           This data is never sold. I can view or delete it anytime.
         </label>
         <label className="flex items-start gap-2 text-sm text-[var(--muted)]">
           <input type="checkbox" checked={eula} onChange={(e) => setEula(e.target.checked)} className="mt-1" />
           I accept the{" "}
           <Link href="/legal" className="text-[var(--volt)]">
-            VoltLoop terms
+            Thulir terms
           </Link>
           : VL is in-app credit only — not cash, not transferable, and not for resale.
         </label>
