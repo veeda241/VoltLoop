@@ -45,7 +45,10 @@ const MeshCanvas = forwardRef(function MeshCanvas(
     const canvas = canvasRef.current;
     if (!canvas) return;
     const parent = canvas.parentElement;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(
+      window.devicePixelRatio || 1,
+      window.matchMedia("(max-width: 767px)").matches ? 1.25 : 2,
+    );
 
     function resize() {
       const w = parent.clientWidth;
@@ -187,8 +190,8 @@ const MeshCanvas = forwardRef(function MeshCanvas(
   return (
     <canvas
       ref={canvasRef}
-      className={`w-full block rounded-2xl ${interactive ? "cursor-crosshair" : ""}`}
-      style={{ height }}
+      className={`w-full max-w-full block rounded-2xl ${interactive ? "cursor-crosshair" : ""}`}
+      style={{ height, maxWidth: "100%" }}
     />
   );
 });

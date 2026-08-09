@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GoogleStationMap from "../components/GoogleStationMap";
-import { useStore, stationDerived } from "../state/store";
+import { useStore, stationDerived, currentUser } from "../state/store";
 
 export default function MapPage() {
   const { state, dispatch } = useStore();
   const nav = useNavigate();
   const [selected, setSelected] = useState(null);
+  const user = currentUser(state);
 
   const stations = state.stations.map((s) => ({ ...s, ...stationDerived(s) }));
 
   function startSession(station) {
+    if (!user || user.role !== "driver") {
+      nav("/login");
+      return;
+    }
     dispatch({
       type: "ADD_STATIONS",
       payload: [
@@ -47,7 +52,7 @@ export default function MapPage() {
   }
 
   return (
-    <div className="h-[calc(100dvh-4.25rem)] md:h-[calc(100dvh-4.75rem)]">
+    <div className="h-[calc(100dvh-3.25rem-env(safe-area-inset-top))] md:h-[calc(100dvh-4.75rem)]">
       <GoogleStationMap
         className="h-full rounded-none border-0"
         height="100%"

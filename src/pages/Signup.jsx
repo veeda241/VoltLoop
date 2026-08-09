@@ -31,7 +31,7 @@ export default function Signup() {
   }
 
   return (
-    <PageIn className="max-w-md mx-auto py-12">
+    <PageIn className="max-w-md mx-auto py-8 md:py-12">
       <Card glow="cyan">
         <h1 className="font-display text-2xl font-bold mb-1">Create your account</h1>
         <p className="text-sm text-muted mb-6">Join Thulir to find chargers and earn rewards while you wait.</p>
@@ -42,7 +42,7 @@ export default function Signup() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-sm outline-none focus:border-volt/60"
+              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-base outline-none focus:border-volt/60"
               required
             />
           </div>
@@ -52,7 +52,7 @@ export default function Signup() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-sm outline-none focus:border-volt/60"
+              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-base outline-none focus:border-volt/60"
               required
             />
           </div>
@@ -68,7 +68,7 @@ export default function Signup() {
                   type="button"
                   key={r}
                   onClick={() => setRole(r)}
-                  className={`rounded-xl border py-2.5 text-sm font-medium transition-colors ${
+                  className={`min-h-11 rounded-xl border py-2.5 text-xs sm:text-sm font-medium transition-colors ${
                     role === r ? "border-volt/60 bg-volt/10 text-volt" : "border-line text-muted hover:text-text"
                   }`}
                 >
@@ -85,7 +85,7 @@ export default function Signup() {
                 <input
                   value={vehicleModel}
                   onChange={(e) => setVehicleModel(e.target.value)}
-                  className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-sm outline-none focus:border-volt/60"
+                  className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-base outline-none focus:border-volt/60"
                 />
               </div>
               <div>
@@ -95,7 +95,7 @@ export default function Signup() {
                   step="0.1"
                   value={batteryKWh}
                   onChange={(e) => setBatteryKWh(e.target.value)}
-                  className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-sm outline-none focus:border-volt/60"
+                  className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-base outline-none focus:border-volt/60"
                 />
               </div>
             </>

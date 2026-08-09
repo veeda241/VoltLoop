@@ -90,7 +90,7 @@ export default function Wallet() {
             <select
               value={merchantId}
               onChange={(e) => setMerchantId(e.target.value)}
-              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-sm outline-none focus:border-volt/60"
+              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-base outline-none focus:border-volt/60"
             >
               {state.merchants.map((m) => (
                 <option key={m.id} value={m.id}>
@@ -106,7 +106,7 @@ export default function Wallet() {
                 type="number"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full rounded-xl bg-bg-elev border border-line px-3 py-2.5 text-sm outline-none focus:border-volt/60"
+                className="w-full rounded-xl bg-bg-elev border border-line px-3 py-2.5 text-base outline-none focus:border-volt/60"
               />
             </div>
             <div>
@@ -116,7 +116,7 @@ export default function Wallet() {
                 max={Math.min(user.vlBalance, amount)}
                 value={vlRedeem}
                 onChange={(e) => setVlRedeem(e.target.value)}
-                className="w-full rounded-xl bg-bg-elev border border-line px-3 py-2.5 text-sm outline-none focus:border-volt/60"
+                className="w-full rounded-xl bg-bg-elev border border-line px-3 py-2.5 text-base outline-none focus:border-volt/60"
               />
             </div>
             <div>
@@ -125,7 +125,7 @@ export default function Wallet() {
                 type="number"
                 value={readyMinutes}
                 onChange={(e) => setReadyMinutes(e.target.value)}
-                className="w-full rounded-xl bg-bg-elev border border-line px-3 py-2.5 text-sm outline-none focus:border-volt/60"
+                className="w-full rounded-xl bg-bg-elev border border-line px-3 py-2.5 text-base outline-none focus:border-volt/60"
               />
             </div>
           </div>

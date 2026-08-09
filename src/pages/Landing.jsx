@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button, Card, Pill, PageIn, SectionEyebrow } from "../components/ui";
 import MeshCanvas from "../components/MeshCanvas";
 import KolamDivider from "../components/KolamDivider";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 const FEATURES = [
   {
@@ -75,24 +76,26 @@ const STEPS = [
 ];
 
 export default function Landing() {
+  const isMobile = useIsMobile();
+
   return (
-    <PageIn>
-      <section className="relative min-h-[calc(100vh-5rem)] flex flex-col justify-center pt-10 md:pt-14 pb-10">
-        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-10 xl:gap-16 items-center">
-          <div>
+    <PageIn className="min-w-0 w-full overflow-x-hidden">
+      <section className="relative flex flex-col justify-center pt-4 pb-6 md:min-h-[calc(100dvh-5rem)] md:pt-14 md:pb-10">
+        <div className="grid min-w-0 lg:grid-cols-[1.05fr_1fr] gap-5 md:gap-8 xl:gap-16 items-center">
+          <div className="min-w-0">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Pill tone="gold">Now live in Thoothukudi</Pill>
+              <Pill tone="gold">Thoothukudi</Pill>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight text-balance mt-5 leading-[0.98]"
+              className="font-display mt-3 text-[1.65rem] font-extrabold leading-snug tracking-tight break-words sm:mt-5 sm:text-5xl sm:leading-[0.98] sm:text-balance lg:text-7xl xl:text-8xl"
             >
               The charging cable is <span className="text-volt">collateral.</span>
             </motion.h1>
@@ -101,26 +104,26 @@ export default function Landing() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-muted mt-6 text-base md:text-xl max-w-2xl leading-relaxed"
+              className="text-muted mt-3 sm:mt-6 text-sm md:text-xl max-w-2xl leading-relaxed"
             >
-              Those 30–45 minutes at the charger are guaranteed local time along the Tuticorin coast.
-              Thulir turns them into nearby offers, honest bay status, and rewards you actually spend
-              before you unplug.
+              {isMobile
+                ? "Those 30–45 minutes at the charger become nearby offers, honest bay status, and rewards you spend before you unplug."
+                : "Those 30–45 minutes at the charger are guaranteed local time along the Tuticorin coast. Thulir turns them into nearby offers, honest bay status, and rewards you actually spend before you unplug."}
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-3 mt-8"
+              className="flex flex-col sm:flex-row sm:flex-wrap gap-2.5 mt-5 sm:mt-8"
             >
-              <Button as={NavLink} to="/login" variant="primary">
+              <Button as={NavLink} to="/map" variant="primary" className="w-full sm:w-auto">
                 Find a charger
               </Button>
-              <Button as={NavLink} to="/sim" variant="secondary">
+              <Button as={NavLink} to="/sim" variant="secondary" className="w-full sm:w-auto">
                 See the live mesh
               </Button>
-              <Button as={NavLink} to="/legal" variant="ghost">
+              <Button as={NavLink} to="/legal" variant="ghost" className="hidden sm:inline-flex">
                 Privacy &amp; terms
               </Button>
             </motion.div>
@@ -130,14 +133,15 @@ export default function Landing() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="min-w-0"
           >
             <Card className="p-0 overflow-hidden" glow="volt">
-              <div className="px-5 pt-5 flex items-center justify-between">
-                <SectionEyebrow>Around the hub</SectionEyebrow>
-                <Pill tone="volt">Live mesh</Pill>
+              <div className="px-3 pt-3 md:px-5 md:pt-5 flex items-center justify-between gap-2 min-w-0">
+                <SectionEyebrow className="mb-0 truncate">Around the hub</SectionEyebrow>
+                <Pill tone="volt" className="shrink-0">Live mesh</Pill>
               </div>
-              <MeshCanvas density={12} height={420} />
-              <div className="px-5 pb-5 pt-1 text-xs text-muted">
+              <MeshCanvas density={isMobile ? 6 : 12} height={isMobile ? 150 : 420} />
+              <div className="px-3 pb-3 pt-1 md:px-5 md:pb-5 text-[11px] md:text-xs text-muted">
                 Teal lines are offers reaching the next vehicle. The brighter dot is you.
               </div>
             </Card>
@@ -145,11 +149,11 @@ export default function Landing() {
         </div>
       </section>
 
-      <KolamDivider className="py-4 md:py-6" />
+      <KolamDivider className="py-2 md:py-6" />
 
-      <section className="py-16 md:py-28 lg:py-32">
-        <SectionEyebrow className="text-sm md:text-base tracking-[0.22em] mb-4">Why Thulir</SectionEyebrow>
-        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-2 mb-10 md:mb-14 max-w-4xl leading-[1.05]">
+      <section className="py-8 md:py-28 lg:py-32 min-w-0">
+        <SectionEyebrow className="mb-3">Why Thulir</SectionEyebrow>
+        <h2 className="font-display text-[1.65rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-1 mb-6 md:mb-14 max-w-4xl leading-snug break-words">
           Charge time, spent well.
         </h2>
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
@@ -162,8 +166,8 @@ export default function Landing() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
             >
               <Card className="h-full overflow-hidden p-0">
-                <img src={f.image} alt={f.alt} className="h-48 w-full object-cover md:h-52" />
-                <div className="p-6 md:p-8">
+                <img src={f.image} alt={f.alt} className="h-36 w-full object-cover md:h-52" />
+                <div className="p-4 md:p-8">
                   <div
                     className={`mb-5 grid h-11 w-11 place-items-center rounded-xl md:h-12 md:w-12 ${
                       f.tone === "volt"
@@ -175,8 +179,8 @@ export default function Landing() {
                   >
                     <span className="font-mono-tight text-sm font-bold md:text-base">{i + 1}</span>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-text md:text-2xl">{f.title}</h3>
-                  <p className="text-base leading-relaxed text-muted">{f.body}</p>
+                  <h3 className="mb-1.5 text-lg font-semibold text-text md:text-2xl">{f.title}</h3>
+                  <p className="text-sm md:text-base leading-relaxed text-muted">{f.body}</p>
                 </div>
               </Card>
             </motion.div>
@@ -184,11 +188,11 @@ export default function Landing() {
         </div>
       </section>
 
-      <KolamDivider className="py-4 md:py-6" />
+      <KolamDivider className="py-2 md:py-6" />
 
-      <section className="py-16 md:py-28 lg:py-32">
-        <SectionEyebrow className="text-sm md:text-base tracking-[0.22em] mb-4">How it works</SectionEyebrow>
-        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-2 mb-10 md:mb-14 leading-[1.05]">
+      <section className="py-8 md:py-28 lg:py-32 min-w-0">
+        <SectionEyebrow className="mb-3">How it works</SectionEyebrow>
+        <h2 className="font-display text-[1.65rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-1 mb-6 md:mb-14 leading-snug break-words">
           From plug-in to pickup.
         </h2>
         <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
@@ -202,16 +206,16 @@ export default function Landing() {
             >
               <NavLink to={to} className="block h-full">
                 <Card className="group h-full overflow-hidden p-0 transition-colors hover:border-volt/40">
-                  <img src={image} alt={alt} className="h-40 w-full object-cover md:h-44" />
-                  <div className="p-6 md:p-8">
+                  <img src={image} alt={alt} className="h-32 w-full object-cover md:h-44" />
+                  <div className="p-4 md:p-8">
                     <div className="mb-3 flex items-center justify-between">
                       <span className="font-mono-tight text-sm font-semibold text-cyan">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="text-sm text-muted transition-colors group-hover:text-volt">Open</span>
                     </div>
-                    <h3 className="mb-2 text-xl font-semibold md:text-2xl">{title}</h3>
-                    <p className="text-base leading-relaxed text-muted">{body}</p>
+                    <h3 className="mb-1.5 text-lg font-semibold md:text-2xl">{title}</h3>
+                    <p className="text-sm md:text-base leading-relaxed text-muted">{body}</p>
                   </div>
                 </Card>
               </NavLink>
@@ -220,7 +224,7 @@ export default function Landing() {
         </div>
       </section>
 
-      <footer className="py-12 border-t border-line/70 mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <footer className="py-8 md:py-12 border-t border-line/70 mt-4 md:mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <p className="text-sm text-muted max-w-xl leading-relaxed">
           Made for the Tamil Nadu EV corridor, starting in Thoothukudi. VL is in-app credit for charging
           and partner stores — not cash, not withdrawable, not transferable.

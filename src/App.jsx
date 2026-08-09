@@ -31,14 +31,7 @@ function AnimatedRoutes() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="/sim" element={<Sim />} />
-        <Route
-          path="/map"
-          element={
-            <RequireRole roles={["driver"]}>
-              <MapPage />
-            </RequireRole>
-          }
-        />
+        <Route path="/map" element={<MapPage />} />
         <Route
           path="/offers"
           element={

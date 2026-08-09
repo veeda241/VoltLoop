@@ -22,7 +22,7 @@ export default function Login() {
   }
 
   return (
-    <PageIn className="max-w-md mx-auto pt-16">
+    <PageIn className="max-w-md mx-auto pt-8 md:pt-16">
       <Card glow="volt">
         <h1 className="font-display text-2xl font-bold mb-1">Welcome back</h1>
         <p className="text-sm text-muted mb-6">Sign in to find chargers, earn VL, and order while you wait.</p>
@@ -33,7 +33,7 @@ export default function Login() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-sm outline-none focus:border-volt/60"
+              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-base outline-none focus:border-volt/60"
               required
             />
           </div>
@@ -43,7 +43,7 @@ export default function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-sm outline-none focus:border-volt/60"
+              className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-base outline-none focus:border-volt/60"
               required
             />
           </div>

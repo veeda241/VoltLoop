@@ -216,7 +216,7 @@ export default function GoogleStationMap({
 
   return (
     <div className={`gmaps-shell gmaps-finder relative overflow-hidden bg-[#e5e3df] ${className}`} style={{ height }}>
-      <div className="pointer-events-none absolute inset-x-3 top-3 z-[1200] md:inset-x-4 md:top-4">
+      <div className="pointer-events-none absolute inset-x-3 top-3 z-[1200] md:inset-x-4 md:top-4 max-md:top-2">
         <div className="pointer-events-auto mx-auto max-w-xl overflow-hidden rounded-2xl bg-white text-[#202124] shadow-[0_2px_12px_rgba(0,0,0,.18)]">
           <div className="flex items-center gap-3 px-4 py-3">
             <span className="text-[#5f6368]" aria-hidden>
@@ -232,7 +232,7 @@ export default function GoogleStationMap({
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search chargers or places"
-                  className="w-full bg-transparent text-[15px] font-medium outline-none placeholder:text-[#80868b]"
+                  className="w-full bg-transparent text-base font-medium outline-none placeholder:text-[#80868b]"
                 />
               ) : (
                 <button type="button" className="block w-full text-left" onClick={() => setSearching(true)}>
@@ -263,7 +263,7 @@ export default function GoogleStationMap({
             ) : null}
           </div>
 
-          <div className="flex gap-2 overflow-x-auto px-3 pb-3 no-scrollbar">
+          <div className="flex gap-2 overflow-x-auto px-3 pb-3 no-scrollbar snap-x snap-mandatory">
             {FILTERS.map((f) => {
               const active = filter === f.id;
               return (
@@ -271,7 +271,7 @@ export default function GoogleStationMap({
                   key={f.id}
                   type="button"
                   onClick={() => setFilter(f.id)}
-                  className={`shrink-0 rounded-full px-3.5 py-1.5 text-[13px] font-medium ${
+                  className={`snap-start shrink-0 min-h-10 rounded-full px-3.5 py-2 text-[13px] font-medium ${
                     active
                       ? "bg-[#202124] text-white"
                       : "border border-[#dadce0] bg-white text-[#202124]"
@@ -318,6 +318,10 @@ export default function GoogleStationMap({
         zoomControl={false}
         attributionControl
         scrollWheelZoom
+        tap
+        tapTolerance={20}
+        touchZoom
+        bounceAtZoomLimits={false}
       >
         <TileLayer attribution="Map data © Google" url={TILE_URL} subdomains="0123" maxZoom={20} />
         <MapBridge mapRef={mapRef} />
@@ -343,10 +347,16 @@ export default function GoogleStationMap({
         })}
       </MapContainer>
 
-      <div className="absolute bottom-[calc(1rem+env(safe-area-inset-bottom))] right-3 z-[1100] flex flex-col overflow-hidden rounded-lg shadow-[0_1px_4px_rgba(0,0,0,.3)] md:bottom-6 md:right-4">
+      <div
+        className={`absolute right-3 z-[1100] flex flex-col overflow-hidden rounded-lg shadow-[0_1px_4px_rgba(0,0,0,.3)] md:right-4 ${
+          selected
+            ? "bottom-[calc(14.5rem+env(safe-area-inset-bottom))] md:bottom-44"
+            : "bottom-[calc(5.5rem+env(safe-area-inset-bottom))] md:bottom-6"
+        }`}
+      >
         <button
           type="button"
-          className="grid h-10 w-10 place-items-center bg-white text-[#5f6368] hover:bg-[#f1f3f4]"
+          className="grid h-11 w-11 place-items-center bg-white text-[#5f6368] hover:bg-[#f1f3f4]"
           onClick={() => mapRef.current?.zoomIn()}
           aria-label="Zoom in"
         >
@@ -355,7 +365,7 @@ export default function GoogleStationMap({
         <div className="h-px bg-[#dadce0]" />
         <button
           type="button"
-          className="grid h-10 w-10 place-items-center bg-white text-[#5f6368] hover:bg-[#f1f3f4]"
+          className="grid h-11 w-11 place-items-center bg-white text-[#5f6368] hover:bg-[#f1f3f4]"
           onClick={() => mapRef.current?.zoomOut()}
           aria-label="Zoom out"
         >
@@ -365,7 +375,11 @@ export default function GoogleStationMap({
 
       <button
         type="button"
-        className="absolute bottom-[calc(1rem+env(safe-area-inset-bottom))] left-3 z-[1100] grid h-10 w-10 place-items-center rounded-full bg-white text-[#1a73e8] shadow-[0_1px_4px_rgba(0,0,0,.3)] md:bottom-6 md:left-4"
+        className={`absolute left-3 z-[1100] grid h-11 w-11 place-items-center rounded-full bg-white text-[#1a73e8] shadow-[0_1px_4px_rgba(0,0,0,.3)] md:left-4 ${
+          selected
+            ? "bottom-[calc(14.5rem+env(safe-area-inset-bottom))] md:bottom-44"
+            : "bottom-[calc(5.5rem+env(safe-area-inset-bottom))] md:bottom-6"
+        }`}
         onClick={() => mapRef.current?.setView([you.lat, you.lng], MAP_ZOOM, { animate: true })}
         aria-label="My location"
       >
@@ -376,7 +390,7 @@ export default function GoogleStationMap({
       </button>
 
       {selected ? (
-        <div className="absolute inset-x-0 bottom-0 z-[1150] px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] md:px-4 md:pb-4">
+        <div className="absolute inset-x-0 bottom-0 z-[1150] px-3 pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:px-4 md:pb-4">
           <div className="mx-auto max-w-xl rounded-2xl bg-white p-4 text-[#202124] shadow-[0_-2px_16px_rgba(0,0,0,.18)]">
             <div className="mb-1 flex items-start justify-between gap-3">
               <div className="min-w-0">
@@ -412,7 +426,7 @@ export default function GoogleStationMap({
                 href={`https://www.google.com/maps/dir/?api=1&destination=${selected.lat},${selected.lng}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 rounded-full border border-[#dadce0] py-2.5 text-center text-sm font-semibold text-[#202124]"
+                className="flex-1 min-h-11 rounded-full border border-[#dadce0] py-2.5 text-center text-sm font-semibold text-[#202124]"
               >
                 Directions
               </a>
@@ -421,7 +435,7 @@ export default function GoogleStationMap({
                   type="button"
                   disabled={selected.vacant === 0}
                   onClick={() => onStart(selected)}
-                  className="flex-1 rounded-full bg-[#1a73e8] py-2.5 text-sm font-semibold text-white disabled:opacity-40"
+                  className="flex-1 min-h-11 rounded-full bg-[#1a73e8] py-2.5 text-sm font-semibold text-white disabled:opacity-40"
                 >
                   {selected.vacant > 0 ? "Start charging" : "All bays in use"}
                 </button>

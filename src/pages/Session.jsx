@@ -60,7 +60,7 @@ export default function Session() {
               <select
                 value={stationId}
                 onChange={(e) => setStationId(e.target.value)}
-                className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-sm outline-none focus:border-volt/60"
+                className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-base outline-none focus:border-volt/60"
               >
                 {state.stations.map((s) => {
                   const vacant = s.bays - s.occupied;
@@ -81,7 +81,7 @@ export default function Session() {
                 max={120}
                 value={expectedMinutes}
                 onChange={(e) => setExpectedMinutes(e.target.value)}
-                className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-sm outline-none focus:border-volt/60"
+                className="w-full rounded-xl bg-bg-elev border border-line px-4 py-3 text-base outline-none focus:border-volt/60"
               />
             </div>
             <Button type="submit" variant="primary" className="w-full">
@@ -117,11 +117,11 @@ export default function Session() {
             </div>
           </div>
 
-          <div className="flex gap-2 mb-6">
-            <Button variant="primary" className="flex-1" onClick={complete}>
+          <div className="flex flex-col gap-2 mb-6 sm:flex-row">
+            <Button variant="primary" className="w-full sm:flex-1" onClick={complete}>
               Finish charging
             </Button>
-            <Button variant="danger" className="flex-1" onClick={cancel}>
+            <Button variant="danger" className="w-full sm:flex-1" onClick={cancel}>
               Cancel charge
             </Button>
           </div>

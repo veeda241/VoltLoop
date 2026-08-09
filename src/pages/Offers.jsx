@@ -44,17 +44,17 @@ function PacketCard({ relay, onShare, onOrder, credited }) {
           <span className={relay.ttl === 0 ? "text-danger" : ""}>{relay.ttl === 0 ? "Expired" : "Still circulating"}</span>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <Button
             variant="primary"
-            className="flex-1"
+            className="w-full sm:flex-1"
             disabled={relay.ttl === 0 || credited}
             onClick={() => onShare(relay)}
           >
             {credited ? "Already earned" : relay.ttl === 0 ? "Offer expired" : "Pass along · +10 VL"}
           </Button>
           {isOffer && (
-            <Button variant="secondary" className="flex-1" onClick={() => onOrder(relay)}>
+            <Button variant="secondary" className="w-full sm:flex-1" onClick={() => onOrder(relay)}>
               Order for pickup
             </Button>
           )}
@@ -173,9 +173,10 @@ export default function Offers() {
             <p className="text-xs text-muted">Your phone stays private. The car talks to Thulir — not to shops.</p>
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
           <Button
             variant={bleStatus === "connected" ? "secondary" : "cyan"}
+            className="w-full sm:w-auto"
             onClick={() => {
               if (bleStatus === "connected") {
                 setBleStatus("demo");
@@ -186,7 +187,7 @@ export default function Offers() {
           >
             {bleStatus === "connected" ? "Disconnect vehicle" : "Connect vehicle"}
           </Button>
-          <Button variant="primary" onClick={() => void inject()}>
+          <Button variant="primary" className="w-full sm:w-auto" onClick={() => void inject()}>
             Preview an offer
           </Button>
         </div>

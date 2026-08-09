@@ -4,8 +4,10 @@ import { Card, Button, Pill, PageIn, SectionEyebrow } from "../components/ui";
 import MeshCanvas from "../components/MeshCanvas";
 import { useStore } from "../state/store";
 import { makeOfferPacket } from "../lib/packets";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 export default function Sim() {
+  const isMobile = useIsMobile();
   const { state, broadcastRelay } = useStore();
   const [density, setDensity] = useState(8);
   const [merchantId, setMerchantId] = useState(state.merchants[0]?.id || "");
@@ -54,7 +56,7 @@ export default function Sim() {
       </div>
 
       <Card className="p-0 overflow-hidden mb-6" glow="volt">
-        <MeshCanvas ref={canvasRef} density={density} height={340} interactive />
+        <MeshCanvas ref={canvasRef} density={density} height={isMobile ? 220 : 340} interactive />
         <div className="px-5 py-4 border-t border-line/70 flex items-center justify-between flex-wrap gap-3">
           <p className="text-xs text-muted">
             Offers hop a few vehicles, then fade. Duplicates are ignored automatically.

@@ -4,8 +4,9 @@
   "description": "VANET-inspired EV charging rewards and hyper-local merchant offers",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#050a14",
-  "theme_color": "#050a14",
+  "orientation": "portrait-primary",
+  "background_color": "#120c08",
+  "theme_color": "#120c08",
   "icons": [
     {
       "src": "/icon.svg",

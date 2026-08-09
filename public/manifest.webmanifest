@@ -4,6 +4,7 @@
   "description": "The charging cable is collateral.",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#120c08",
   "theme_color": "#120c08",
   "icons": [

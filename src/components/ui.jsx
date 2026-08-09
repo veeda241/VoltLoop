@@ -1,18 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export function Logo({ size = 40 }) {
+export function Logo({ size }) {
   return (
-    <div className="flex items-center gap-3 select-none">
+    <div className="flex min-w-0 items-center gap-1.5 md:gap-3 select-none">
       <div
-        className="grid place-items-center rounded-xl bg-volt text-volt-ink font-black shadow-glow ring-2 ring-gold/80"
-        style={{ width: size, height: size }}
+        className={`grid shrink-0 place-items-center rounded-xl bg-volt text-volt-ink font-black shadow-glow ring-2 ring-gold/80 ${
+          size ? "" : "h-7 w-7 md:h-10 md:w-10"
+        }`}
+        style={size ? { width: size, height: size } : undefined}
       >
-        <svg width={size * 0.55} height={size * 0.55} viewBox="0 0 24 24" fill="currentColor">
+        <svg className="h-[55%] w-[55%]" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
           <path d="M13 2 L4 14 H10 L9 22 L20 9 H13 L13 2 Z" />
         </svg>
       </div>
-      <span className="font-display font-extrabold tracking-tight text-2xl md:text-3xl text-text">Thulir</span>
+      <span className="font-display font-extrabold tracking-tight text-lg md:text-3xl text-text truncate">Thulir</span>
     </div>
   );
 }
@@ -32,7 +34,7 @@ export function Card({ className = "", children, glow, ...rest }) {
 
 export function Button({ variant = "primary", className = "", children, as: Comp = "button", ...rest }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-sm transition-all active:scale-[0.97] disabled:opacity-40 disabled:pointer-events-none";
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-sm transition-all active:scale-[0.97] disabled:opacity-40 disabled:pointer-events-none touch-manipulation";
   const styles = {
     primary: "bg-volt text-volt-ink hover:brightness-110 shadow-glow",
     secondary: "border border-line text-text hover:border-volt/60 hover:text-volt",
@@ -120,7 +122,7 @@ export function StatBlock({ label, value, tone = "text" }) {
 
 export function SectionEyebrow({ children, className = "" }) {
   return (
-    <p className={`text-xs font-mono-tight uppercase tracking-[0.2em] text-gold mb-3 ${className}`}>
+    <p className={`text-[11px] md:text-xs font-mono-tight uppercase tracking-[0.14em] md:tracking-[0.2em] text-gold mb-2 md:mb-3 ${className}`}>
       {children}
     </p>
   );

@@ -33,7 +33,7 @@ function Toast({ toast, onDone }) {
 export default function Toaster() {
   const { state, dispatch } = useStore();
   return (
-    <div className="fixed bottom-20 md:bottom-6 right-4 left-4 md:left-auto md:w-96 z-[9999] flex flex-col gap-2 items-end pointer-events-none">
+    <div className="fixed bottom-[calc(5.75rem+env(safe-area-inset-bottom))] md:bottom-6 right-4 left-4 md:left-auto md:w-96 z-[9999] flex flex-col gap-2 items-end pointer-events-none">
       <AnimatePresence>
         {state.toasts.map((t) => (
           <Toast key={t.id} toast={t} onDone={() => dispatch({ type: "DISMISS_TOAST", payload: { id: t.id } })} />
