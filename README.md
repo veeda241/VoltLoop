@@ -32,11 +32,13 @@ npm run preview   # http://localhost:4173
 
 **Vercel:** import the repo — `vercel.json` forces the Vite framework (not Next.js) and SPA rewrites.
 
+**Render:** New → Blueprint — `render.yaml` on `main` builds the Vite SPA (`dist/`) with SPA rewrites.
+
 Optional env on the host:
 
 | Variable | Purpose |
 |---|---|
-| `VITE_VOLTLOOP_HMAC_KEY` | HMAC secret for mesh hop signing (defaults to demo key) |
+| `VITE_VOLTLOOP_HMAC_KEY` | HMAC secret for mesh hop signing (defaults to demo key; set in Render if you rotate it) |
 
 Web Bluetooth needs **HTTPS** (or localhost). Google map tiles and the India station CSV ship with the static build.
 
